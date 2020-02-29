@@ -1,0 +1,7 @@
+FeedReader\Domain\User\Command\RegisterUser:
+    constraints:
+        -   Callback: validate
+    properties:
+        email:
+            -   NotBlank: ~
+            -   Email: ~

@@ -1,0 +1,28 @@
+<div>
+  <h1>Hi {{currentUser.username}}!</h1>
+  <hr class="my-4">
+  <h3>Top-10 popular words:</h3>
+  <ul class="list-group">
+    <li *ngFor="let word of mostPopularWords | keyvalue"
+        class="list-group-item d-flex justify-content-between align-items-center">{{word.key}} <span
+      class="badge badge-light">{{word.value}}</span></li>
+  </ul>
+  <hr class="my-4">
+  <h4>{{title}}</h4>
+  <div id="accordion">
+    <div *ngFor="let feedItem of feed" class="card">
+      <div class="card-header" id="headingOne">
+        <h5 class="mb-0">
+          <div class="row" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <div class="col-10"><a target="_blank" href="{{feedItem.link ? feedItem.link : '#'}}">{{feedItem.title}}</a></div>
+            <div class="col-2" style="font-size: 1rem;">{{feedItem.lastModified | date}}</div>
+          </div>
+        </h5>
+      </div>
+
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body" [innerHTML]="feedItem.summary"></div>
+      </div>
+    </div>
+  </div>
+</div>
