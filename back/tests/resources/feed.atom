@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <id>tag:theregister.co.uk,2005:feed/theregister.co.uk/software/</id>
+  <title>The Register - Software</title>
+  <link rel="self" type="application/atom+xml" href="https://www.theregister.co.uk/software/headlines.atom"/>
+  <link rel="alternate" type="text/html" href="https://www.theregister.co.uk/software/"/>
+  <rights>Copyright © 2020, Situation Publishing</rights>
+  <author>
+    <name>Team Register</name>
+    <email>webmaster@theregister.co.uk</email>
+    <uri>https://www.theregister.co.uk/odds/about/contact/</uri>
+  </author>
+  <icon>https://www.theregister.co.uk/Design/graphics/icons/favicon.png</icon>
+  <subtitle>Biting the hand that feeds IT — sci/tech news and views for the world</subtitle>
+  <logo>https://www.theregister.co.uk/Design/graphics/Reg_default/The_Register_r.png</logo>
+  <updated>2020-02-28T12:50:05Z</updated>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story206978</id>
+    <updated>2020-02-13T15:58:18Z</updated>
+    <author>
+      <name>Tim Anderson</name>
+      <uri>https://search.theregister.co.uk/?author=Tim%20Anderson</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="https://go.theregister.co.uk/feed/www.theregister.co.uk/2020/02/13/designing_windows_and_android_apps_for_dualscreen_devices/"/>
+    <title type="html">Microsoft brings the pane: You'll be looking at Xamarin and React Native to design apps for dual-screen gizmos</title>
+    <summary type="html" xml:base="https://www.theregister.co.uk/">&lt;h4&gt;Surface Neo is the most interesting new Windows device in years, but will weary devs support it?&lt;/h4&gt; &lt;p&gt;Microsoft's dual-screen Surface devices for Windows (Neo) and Android (Duo) come out later this year, but how will devs write or re-write their apps to support them?…&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story206918</id>
+    <updated>2020-02-10T10:50:54Z</updated>
+    <author>
+      <name>Richard Speed</name>
+      <uri>https://search.theregister.co.uk/?author=Richard%20Speed</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="https://go.theregister.co.uk/feed/www.theregister.co.uk/2020/02/10/microsoft_roundup/"/>
+    <title type="html">A new entry in the franchise: Microsoft Windows and the Goblet of Meh</title>
+    <summary type="html" xml:base="https://www.theregister.co.uk/">&lt;h4&gt;Good news for Windows on ARM64 users in this week's round up&lt;/h4&gt; &lt;p&gt;&lt;strong&gt;Roundup&lt;/strong&gt;  The Microsoft gang managed to find time away from &lt;a target="_blank" href="https://www.theregister.co.uk/2020/02/05/windows_10_binged/"&gt;breaking Bing&lt;/a&gt; and &lt;a target="_blank" href="https://www.theregister.co.uk/2020/02/03/teams_down/"&gt;trashing Teams&lt;/a&gt; last week to emit new Windows and update Visual Studio Code.…&lt;/p&gt;</summary>
+  </entry>
+</feed>
