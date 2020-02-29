@@ -43,9 +43,10 @@ docker exec feed_php bin/console doctrine:migrations:migrate
 docker exec feed_php bin/phpunit
 ```
 
-4. Launch the project
+4. Launch the project	
 
-Go to http://localhost:4210/
+Go to http://localhost:4210/	
+
 
 ### Technologies used
 
@@ -59,6 +60,88 @@ Go to http://localhost:4210/
 - Angular7 + TypeScript
 - PHP + Symfony5
 - PHPUnit
+
+## API
+
+### Register
+
+URL: `POST /api/v1.0/users/register`
+Body: 
+```json
+{
+    "email": "test@example.com",
+    "password": "SecureP@ssw0rd",
+    "repeat": "SecureP@ssw0rd"
+}
+```
+Password must be at least 6 symbols containing both letters and numbers.
+
+Response (Response code is **201**):
+```json
+{
+    "success": true
+}
+```
+
+### Login
+
+URL: `POST /api/v1.0/users/login`
+Body: 
+```json
+{
+    "username": "test@example.com",
+    "password": "SecureP@ssw0rd"
+}
+```
+
+Response:
+```json
+{
+    "success": true,
+    "username": "test@example.com"
+}
+```
+
+### Is email registered already
+
+URL: `GET /api/v1.0/users/email/test@example.com`
+
+Response:
+```json
+{
+    "is_free": true
+}
+```
+
+### Get feed
+
+URL: `GET /api/v1.0/feeds`
+
+Response:
+```json
+{
+    "mostPopularWords": {
+        "word1": 33,
+        "word2": 16,
+        "word3": 10
+    },
+    "items": [
+        {
+            "title": "Title",
+            "link": "https://link.go.com/test",
+            "summary": "<h4>Some text</h4>",
+            "lastModified": "2011-12-26T15:58:18+00:00",
+            "authorName": "",
+            "authorEmail": "",
+            "authorUri": ""
+        }
+    ],
+    "title": "The Register - Software",
+    "logo": "https://www.theregister.co.uk/Design/graphics/Reg_default/The_Register_r.png",
+    "url": ""
+}
+```
+User should be authorized to use this endpoint.
 
 
 ## Trade-offs, assumptions, simplifications
