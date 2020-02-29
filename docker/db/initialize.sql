@@ -1,0 +1,4 @@
+CREATE DATABASE IF NOT EXISTS `feed_db`;
+CREATE DATABASE IF NOT EXISTS `feed_db_test`;
+
+GRANT ALL ON *.* TO 'feed'@'%';

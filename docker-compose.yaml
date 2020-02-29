@@ -1,0 +1,82 @@
+# Author: Serhii Fomenko <fehomehal@gmail.com>
+
+version: "3.7"
+
+services:
+    mysql:
+        container_name: feed_mysql
+        image: mysql:8.0
+        command: ['--default-authentication-plugin=mysql_native_password']
+        restart: always
+        environment:
+            - MYSQL_ROOT_PASSWORD=secret
+            - MYSQL_DATABASE=feed_db
+            - MYSQL_USER=feed
+            - MYSQL_PASSWORD=feed_db_pass
+        ports:
+            - "3317:3306"
+        volumes:
+            - dbvol:/var/lib/mysql
+            - ./docker/db:/docker-entrypoint-initdb.d
+
+    php_app:
+        container_name: feed_php
+        build:
+            context: .
+            dockerfile: ./docker/back/Dockerfile
+            target: app
+        restart: always
+        depends_on:
+            - mysql
+        links:
+            - mysql
+        volumes:
+            - /var/www/html/vendor
+            - ./back:/var/www/html
+            - cachevol:/var/www/html/var/cache
+            - assetsvol:/var/www/html/public/bundles
+        environment:
+            - "DATABASE_URL=mysql://feed:feed_db_pass@mysql:3306/feed_db?serverVersion=8.0"
+            - MYSQL_HOST=mysql
+            - MYSQL_USER=feed
+            - MYSQL_PASSWORD=feed_db_pass
+            - MYSQL_DATABASE=feed
+            - "APP_SECRET=TestFeed@pp!0!"
+            - APP_ENV=dev
+            - CORS_ALLOW_ORIGIN="^https?://localhost(:[0-9]+)?$$" # escape $
+            - LOG_DESTINATION=php://stdout
+
+    angular_app:
+        container_name: feed_angular
+        build:
+            context: .
+            dockerfile: ./docker/front/Dockerfile
+            target: angular_php
+        restart: always
+        depends_on:
+            - php_app
+        links:
+            - php_app
+        volumes:
+            - ./front/feed:/app:delegated
+            - nodevol:/app/node_modules
+        ports:
+            - "4210:4200"
+
+    nginx:
+        container_name: feed_nginx
+        image: "evild/alpine-nginx:1.11.5"
+        restart: always
+        links:
+            - php_app
+        volumes:
+            - ./back/public:/var/www/html/public:ro
+            - ./docker/nginx/conf.d:/etc/nginx/conf.d:ro
+        ports:
+            - "1080:80"
+
+volumes:
+    cachevol:
+    dbvol:
+    assetsvol:
+    nodevol:

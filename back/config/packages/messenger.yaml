@@ -1,0 +1,8 @@
+framework:
+    messenger:
+        transports:
+            sync: 'sync://'
+        buses:
+            messenger.bus.default:
+                middleware:
+                    - 'messenger.middleware.validation'
