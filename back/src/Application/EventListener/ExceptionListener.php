@@ -25,21 +25,19 @@ final class ExceptionListener
         $exception = $event->getThrowable();
         $response = new JsonResponse();
         $data = ['success' => false];
-        if ($exception instanceof ValidationFailedException) {
+        $statusCode = Response::HTTP_INTERNAL_SERVER_ERROR;
+        $data['error'] = $exception->getMessage();
+        if ($exception instanceof HttpException) {
+            $statusCode = $exception->getStatusCode();
+        } elseif ($exception instanceof ValidationFailedException) {
             $response->setStatusCode(Response::HTTP_BAD_REQUEST);
             $data['error'] = $this->flattenValidationErrors($exception);
         } elseif ($exception instanceof HandlerFailedException) {
             foreach ($exception->getNestedExceptions() as $nestedException) {
                 $data = $this->parseNestedMessengerExceptions($data, $response, $nestedException);
             }
-        } else {
-            $statusCode = Response::HTTP_INTERNAL_SERVER_ERROR;
-            if ($exception instanceof HttpException) {
-                $statusCode = $exception->getStatusCode();
-            }
-            $response->setStatusCode($statusCode);
-            $data['error'] = $exception->getMessage();
         }
+        $response->setStatusCode($statusCode);
         $response->setData($data);
 
         $event->setResponse($response);

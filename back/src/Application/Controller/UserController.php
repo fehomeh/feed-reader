@@ -29,6 +29,7 @@ final class UserController extends AbstractController
         $user = $this->getUser();
         $success = null !== $user;
 
+        $responseData = [];
         $responseData['success'] = $success;
         if ($success) {
             $responseData['username'] = $user->getUsername();

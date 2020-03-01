@@ -163,6 +163,6 @@ final class UserControllerTest extends AcceptanceTestCase
         self::assertSame(
             $response['error'],
             'User with such email exists: admin@test.com',
-            );
+        );
     }
 }
