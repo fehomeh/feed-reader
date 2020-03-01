@@ -6,10 +6,6 @@ namespace FeedReader\Application\Feed\DTO;
 
 use DateTime;
 
-/**
- * @author Serhii Fomenko <fehomehal@gmail.com>
- * @package FeedReader
- */
 final class FeedItem
 {
     public string $title;

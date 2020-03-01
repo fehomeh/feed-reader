@@ -8,10 +8,6 @@ use FeedReader\Domain\User\Command\CheckEmailOccupation;
 use FeedReader\Domain\User\Repository\UserRepository;
 use Symfony\Component\Messenger\Handler\MessageHandlerInterface;
 
-/**
- * @author Serhii Fomenko <fehomehal@gmail.com>
- * @package FeedReader
- */
 final class CheckEmailOccupationHandler implements MessageHandlerInterface
 {
     private UserRepository $userRepository;

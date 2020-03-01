@@ -14,10 +14,6 @@ use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Messenger\Stamp\HandledStamp;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @author Serhii Fomenko <fehomehal@gmail.com>
- * @package FeedReader
- */
 final class UserController extends AbstractController
 {
     /**

@@ -10,10 +10,6 @@ use FeedReader\Application\Feed\DTO\FeedList;
 use FeedReader\Application\Feed\FeedListBuilder;
 use Symfony\Component\Messenger\Handler\MessageHandlerInterface;
 
-/**
- * @author Serhii Fomenko <fehomehal@gmail.com>
- * @package FeedReader
- */
 final class GetFeedHandler implements MessageHandlerInterface
 {
     private FeedIo $feedReader;

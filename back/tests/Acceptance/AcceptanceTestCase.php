@@ -14,10 +14,6 @@ use Symfony\Component\BrowserKit\Cookie;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
-/**
- * @author Serhii Fomenko <fehomehal@gmail.com>
- * @package FeedReader
- */
 abstract class AcceptanceTestCase extends WebTestCase
 {
     public const TEST_USER_PASSWORD = 'test_123';

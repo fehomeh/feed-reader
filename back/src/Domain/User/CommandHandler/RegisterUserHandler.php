@@ -11,10 +11,6 @@ use FeedReader\Domain\User\User;
 use Symfony\Component\Messenger\Handler\MessageHandlerInterface;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
-/**
- * @author Serhii Fomenko <fehomehal@gmail.com>
- * @package FeedReader
- */
 final class RegisterUserHandler implements MessageHandlerInterface
 {
     private UserRepository $repository;

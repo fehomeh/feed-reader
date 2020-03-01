@@ -6,10 +6,6 @@ namespace FeedReader\Domain\User\Command;
 
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
-/**
- * @author Serhii Fomenko <fehomehal@gmail.com>
- * @package FeedReader
- */
 final class RegisterUser
 {
     private string $email;

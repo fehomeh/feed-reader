@@ -8,10 +8,6 @@ use FeedReader\Application\Feed\DTO\FeedItem;
 use FeedReader\Application\Feed\PopularWordsParser;
 use PHPUnit\Framework\TestCase;
 
-/**
- * @author Serhii Fomenko <fehomehal@gmail.com>
- * @package FeedReader
- */
 final class PopularWordsParserTest extends TestCase
 {
     public function testParseLorumParagraph(): void

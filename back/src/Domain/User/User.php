@@ -6,10 +6,6 @@ use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
-/**
- * @author Serhii Fomenko <fehomehal@gmail.com>
- * @package FeedReader
- */
 class User implements UserInterface
 {
     private const DEFAULT_ROLE_USER = 'ROLE_USER';

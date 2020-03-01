@@ -9,10 +9,6 @@ use FeedReader\Domain\User\User;
 use FeedReader\Tests\Acceptance\AcceptanceTestCase;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * @author Serhii Fomenko <fehomehal@gmail.com>
- * @package FeedReader
- */
 final class UserControllerTest extends AcceptanceTestCase
 {
     private const USER_TEST_PASSWORD = 'AXop12!)';

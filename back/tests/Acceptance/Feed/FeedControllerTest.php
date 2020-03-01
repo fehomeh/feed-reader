@@ -8,10 +8,6 @@ use FeedReader\Tests\Acceptance\AcceptanceTestCase;
 use GuzzleHttp\Psr7\Response;
 use Symfony\Component\HttpFoundation\Response as SymfonyResponse;
 
-/**
- * @author Serhii Fomenko <fehomehal@gmail.com>
- * @package FeedReader
- */
 final class FeedControllerTest extends AcceptanceTestCase
 {
     protected function setUp(): void

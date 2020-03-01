@@ -6,10 +6,6 @@ namespace FeedReader\Application\Feed;
 
 use FeedReader\Application\Feed\DTO\FeedItem;
 
-/**
- * @author Serhii Fomenko <fehomehal@gmail.com>
- * @package FeedReader
- */
 final class PopularWordsParser
 {
     private const TOP_50_POPULAR = [

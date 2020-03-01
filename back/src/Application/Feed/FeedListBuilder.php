@@ -9,10 +9,6 @@ use FeedIo\FeedInterface;
 use FeedReader\Application\Feed\DTO\FeedItem;
 use FeedReader\Application\Feed\DTO\FeedList;
 
-/**
- * @author Serhii Fomenko <fehomehal@gmail.com>
- * @package FeedReader
- */
 final class FeedListBuilder
 {
     /** @var FeedInterface<Item> */

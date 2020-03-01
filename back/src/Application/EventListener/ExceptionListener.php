@@ -14,10 +14,6 @@ use Symfony\Component\Messenger\Exception\ValidationFailedException;
 use Symfony\Component\Validator\ConstraintViolation;
 use Throwable;
 
-/**
- * @author Serhii Fomenko <fehomehal@gmail.com>
- * @package FeedReader
- */
 final class ExceptionListener
 {
     public function onKernelException(ExceptionEvent $event): void

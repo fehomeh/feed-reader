@@ -6,10 +6,6 @@ namespace FeedReader\Domain\User\Exception;
 
 use LogicException;
 
-/**
- * @author Serhii Fomenko <fehomehal@gmail.com>
- * @package FeedReader
- */
 final class UserExists extends LogicException
 {
     public static function create(string $email): self

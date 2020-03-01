@@ -9,10 +9,6 @@ use Doctrine\Common\Persistence\ManagerRegistry;
 use FeedReader\Domain\User\Repository\UserRepository as UserRepositoryInterface;
 use FeedReader\Domain\User\User;
 
-/**
- * @author Serhii Fomenko <fehomehal@gmail.com>
- * @package FeedReader
- */
 final class UserRepository extends ServiceEntityRepository implements UserRepositoryInterface
 {
     public function __construct(ManagerRegistry $registry)
