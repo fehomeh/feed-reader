@@ -150,5 +150,5 @@ User should be authorized to use this endpoint.
 - Backend is not fully covered with all possible tests. Frontend is not covered with tests at all.
 - PHP session is used for authentication(Any token authentication system should be used instead).
 - No API docs generators ([NelmioApiDocBundle](https://symfony.com/doc/current/bundles/NelmioApiDocBundle/index.html) can be used).
-- Not a real REST project ([API Platform](https://api-platform.com/) or [FOSRestBundle](https://symfony.com/doc/master/bundles/FOSRestBundle/index.html) can be used instead.
-- No pre-commit hooks with Code style validation and static analysis added (I would use [GrumPHP](https://github.com/phpro/grumphp)) for that)
+- Not a real REST project ([API Platform](https://api-platform.com/) or [FOSRestBundle](https://symfony.com/doc/master/bundles/FOSRestBundle/index.html) can be used instead).
+- No pre-commit hooks with Code style validation and static analysis added (I would use [GrumPHP](https://github.com/phpro/grumphp)) for that.
