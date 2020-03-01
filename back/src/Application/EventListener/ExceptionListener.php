@@ -26,9 +26,10 @@ final class ExceptionListener
         if ($exception instanceof HttpException) {
             $statusCode = $exception->getStatusCode();
         } elseif ($exception instanceof ValidationFailedException) {
-            $response->setStatusCode(Response::HTTP_BAD_REQUEST);
+            $statusCode = Response::HTTP_BAD_REQUEST;
             $data['error'] = $this->flattenValidationErrors($exception);
         } elseif ($exception instanceof HandlerFailedException) {
+            $statusCode = Response::HTTP_BAD_REQUEST;
             foreach ($exception->getNestedExceptions() as $nestedException) {
                 $data = $this->parseNestedMessengerExceptions($data, $response, $nestedException);
             }
@@ -68,7 +69,6 @@ final class ExceptionListener
         Throwable $nestedException
     ): array {
         if ($nestedException instanceof UserExists) {
-            $response->setStatusCode(Response::HTTP_BAD_REQUEST);
             $data['error'] = $nestedException->getMessage();
         }
 
