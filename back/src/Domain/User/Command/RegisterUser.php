@@ -57,7 +57,7 @@ final class RegisterUser
                 ->atPath('password')
                 ->addViolation();
         }
-        if (!preg_match('/^(?=.*[\w])(?=.*[\d])[\w\W0-9]{6,}$/', $this->password)) {
+        if (!preg_match('/^(?=.*[A-Za-z])(?=.*[\d])[\w\W0-9]{6,}$/', $this->password)) {
             $context->buildViolation('Password must contain letter, digit and be at least 6 symbols')
                 ->atPath('password')
                 ->addViolation();

@@ -72,6 +72,23 @@ final class UserController extends AbstractController
     }
 
     /**
+     * @Route("/users/logout", methods={"GET"})
+     * @return JsonResponse
+     */
+    public function logout(): JsonResponse
+    {
+        return $this->json(['success' => true]);
+    }
+    /**
+     * @Route("/users/logout-message", methods={"GET"})
+     * @return JsonResponse
+     */
+    public function logoutMessage(): JsonResponse
+    {
+        return $this->json(['success' => true]);
+    }
+
+    /**
      * @param Request $request
      *
      * @return string

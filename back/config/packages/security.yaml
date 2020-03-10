@@ -19,6 +19,9 @@ security:
             provider: app_user_provider
             json_login:
                 check_path: /api/v1.0/users/login
+            logout:
+                path: /api/v1.0/users/logout
+                target: /api/v1.0/users/logout-message
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
